@@ -4,3 +4,6 @@ black
 click
 geopy
 pandas
+uvicorn
+fastapi
+pydantic
