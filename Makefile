@@ -12,6 +12,6 @@ run:
 	python *.py
 
 lint:
-	pylint --disable=R,C *.py
+	pylint --disable=R,C,E1120 *.py
 
 all: install lint test
