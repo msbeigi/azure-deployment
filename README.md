@@ -8,3 +8,18 @@ This command-line tool uses the Traveling Salesman Problem (TSP) to find the sho
     install -r requirements.txt
     make install
 ```
+
+## To run
+```bash
+    curl -X POST "http://your-api-url/location" -H "Content-Type: application/json" -d '{"city": "New York"}'
+```
+Example Response:
+```json
+    {
+    "name": "New York",
+    "lat": 40.7128,
+    "long": -74.0060
+    }
+```
+
+Access the Swagger documentation by visiting http://your-api-url/docs in your browser.
