@@ -9,7 +9,7 @@ def my_cities(*args):
     """Build a list of cities from input"""
     return list(args)
 
-    
+
 def create_cities_dataframe(cities=None):
     """Create a Pandas DataFrame of cities and their latitudes and longitudes"""
 
@@ -78,8 +78,12 @@ def tsp(cities_df):
                     cities_df[cities_df["city"] == city_list[i]]["longitude"].values[0],
                 ),
                 (
-                    cities_df[cities_df["city"] == city_list[i + 1]]["latitude"].values[0],
-                    cities_df[cities_df["city"] == city_list[i + 1]]["longitude"].values[0],
+                    cities_df[cities_df["city"] == city_list[i + 1]]["latitude"].values[
+                        0
+                    ],
+                    cities_df[cities_df["city"] == city_list[i + 1]][
+                        "longitude"
+                    ].values[0],
                 ),
             ).miles
             # append the distance to the distance list
