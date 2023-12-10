@@ -33,6 +33,7 @@ async def get_cities_loc(city:str):
     return result
 
 
-
 if __name__ == '__main__':
     uvicorn.run(app,port=8007,host='0.0.0.0')
+
+    

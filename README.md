@@ -9,17 +9,27 @@ This command-line tool uses the Traveling Salesman Problem (TSP) to find the sho
     make install
 ```
 
-## To run
+## To build container
+```
+    docker build .
+    docker image ls
+```
+
+## To run container
+```
+    docker run -p 8007:8007 025dae2be507
+```
+
+## To run bash file
 ```bash
-    curl -X POST "http://your-api-url/location" -H "Content-Type: application/json" -d '{"city": "New York"}'
+    bash invoke.sh Atlanta
 ```
 Example Response:
 ```json
     {
-    "name": "New York",
-    "lat": 40.7128,
-    "long": -74.0060
+        "name":"Phoenix",
+        "long":-112.074141,
+        "lat":33.4484367
     }
 ```
 
-Access the Swagger documentation by visiting http://your-api-url/docs in your browser.
