@@ -33,18 +33,19 @@ Example Response:
     }
 ```
 ## To push image into Azure container registry 
-to tag docker image:
-```
-docker build -t fastapi:first .
-```
-to store your docker image:
-```
-docker build -t myregistry.azurecr.io/myrepository/myimage:1.0 .
-```
 
-to push the tagged image to your Azure Container Registry:
 ```
+# 1- Login to ACR
 docker login fastapicontainer.azurecr.io
-docker push myregistry.azurecr.io/myrepository/myimage:1.0
+# 2-Build the Docker image  
+
+docker build -t mydockerrepo/myapiimage:1.0
+
+# 1-Tag the Docker image with the ACR repository information
+docker tag mydockerrepo/myapiimage:1.0 fastapicontainer.azurecr.io/myapiimage:1.0
+
+# 4- Push the Docker Image to Azure Container Registry (ACR)
+docker push fastapicontainer.azurecr.io/myapiimage:1.0
+
 
 ```
