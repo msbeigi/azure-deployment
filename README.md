@@ -44,6 +44,7 @@ docker build -t myregistry.azurecr.io/myrepository/myimage:1.0 .
 
 to push the tagged image to your Azure Container Registry:
 ```
+docker login fastapicontainer.azurecr.io
 docker push myregistry.azurecr.io/myrepository/myimage:1.0
 
 ```
