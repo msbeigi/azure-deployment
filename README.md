@@ -32,4 +32,18 @@ Example Response:
         "lat":33.4484367
     }
 ```
+## To push image into Azure container registry 
+to tag docker image:
+```
+docker build -t fastapi:first .
+```
+to store your docker image:
+```
+docker build -t myregistry.azurecr.io/myrepository/myimage:1.0 .
+```
 
+to push the tagged image to your Azure Container Registry:
+```
+docker push myregistry.azurecr.io/myrepository/myimage:1.0
+
+```
