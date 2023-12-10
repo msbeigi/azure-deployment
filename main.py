@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 import uvicorn
 # import mlflow
-import pandas as pd
+# import pandas as pd
 from pydantic import BaseModel
 import distance_cities as ds
 

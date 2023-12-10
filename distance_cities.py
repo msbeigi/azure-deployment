@@ -1,7 +1,7 @@
 import geopy
 import geopy.distance
-# import pandas as pd
 from random import shuffle
+import pandas as pd
 import click
 
 
