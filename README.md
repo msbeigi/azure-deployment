@@ -8,6 +8,13 @@ This command-line tool uses the Traveling Salesman Problem (TSP) to find the sho
     install -r requirements.txt
     make install
 ```
+### response
+```
+curl -X 'POST' \
+  'https://musical-tribble-979pw77v7543r5q-8007.app.github.dev/locaction?city=Houston' \
+  -H 'accept: application/json' \
+  -d ''
+```
 
 ## To build container
 ```
