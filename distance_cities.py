@@ -36,16 +36,22 @@ def create_cities_dataframe(cities=None):
             "Phoenix",
             "San Diego",
         ]
+    try:
+        # create a list to hold the latitudes and longitudes
+        latitudes = []
+        longitudes = []
+        # loop through the cities list and get the latitudes and longitudes
+        for city in cities:
+            geolocator = geopy.geocoders.Nominatim(user_agent="tsp_pandas")
+            location = geolocator.geocode(city, timeout=10)
+            if location:
+                latitudes.append(location.latitude)
+                longitudes.append(location.longitude)
+            else:
+                print(f"Location not found for {city}. Skipping...")
+    except geopy.exc.GeocoderTimedOut:
+        print(f"Timeout error for {city}. Skipping...")
 
-    # create a list to hold the latitudes and longitudes
-    latitudes = []
-    longitudes = []
-    # loop through the cities list and get the latitudes and longitudes
-    for city in cities:
-        geolocator = geopy.geocoders.Nominatim(user_agent="tsp_pandas")
-        location = geolocator.geocode(city)
-        latitudes.append(location.latitude)
-        longitudes.append(location.longitude)
     # create a dataframe from the cities, latitudes, and longitudes
     df = pd.DataFrame(
         {
