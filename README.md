@@ -12,6 +12,8 @@ This command-line tool uses the Traveling Salesman Problem (TSP) to find the sho
 ## To build container
 ```
     docker build .
+    docker build -t <image_name>:<tag> .
+
     docker image ls
 ```
 
@@ -33,6 +35,7 @@ Example Response:
     }
 ```
 ## To push image into Azure container registry 
+For login to container registry the authenticatoin is available in the Azure Portal, navigate to your Azure Container Registry (e.g. fastapicontainer.azurecr.io in this case). Under the "Settings" menu, select "Access keys." You'll find two access keys.
 
 ```
 # 1- Login to ACR
