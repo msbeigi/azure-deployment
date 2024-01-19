@@ -9,7 +9,7 @@ def call_fastapi_app(city):
     data = {"city": city}
 
     # Sending a POST request to the FastAPI endpoint
-    response = requests.post(url, json=data)
+    response = requests.post(url, json=data, timeout=10)
 
     # Check the status code of the response
     if response.status_code == 200:
@@ -30,6 +30,6 @@ if __name__ == "__main__":
         print("Usage: python call_fastapi.py <city>")
         sys.exit(1)
 
-    city = sys.argv[1]
+    city_arg = sys.argv[1]
 
-    call_fastapi_app(city)
+    call_fastapi_app(city_arg)
