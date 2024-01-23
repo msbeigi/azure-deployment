@@ -3,15 +3,9 @@ import sys
 
 
 def call_fastapi_app(city):
-    url = "https://goesmaplepy.azurewebsites.net/location"
+    url = f"http://geoapicity.eastus.azurecontainer.io:8007/locaction?city={city}"
+    response = requests.post(url)
 
-    # Data to be sent in the POST request
-    data = {"city": city}
-
-    # Sending a POST request to the FastAPI endpoint
-    response = requests.post(url, json=data, timeout=10)
-
-    # Check the status code of the response
     if response.status_code == 200:
         print("Request was successful!")
         print("Response JSON:", response.json())
@@ -19,17 +13,16 @@ def call_fastapi_app(city):
         print(f"Error: {response.status_code}")
         print("Response text:", response.text)
 
-# Replace "YourCityName" with the actual city you want to query
-# call_fastapi_app("YourCityName")
-
-
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python call_fastapi.py <city>")
-        sys.exit(1)
+    # if len(sys.argv) != 2:
+    #     print("Usage: python call_sample_appService.py <city>")
+    #     sys.exit(1)
 
+
+    print("Started..")
     city_arg = sys.argv[1]
-
+    print('Calling endpoint location city \nArg is:', city_arg)
     call_fastapi_app(city_arg)
+
