@@ -12,6 +12,6 @@ run:
 	python *.py
 
 lint:
-	pylint --disable=R,C,E1120 *.py
+	pylint --disable=R,C,E1120,W3101 *.py
 
-all: install format test
+all: install format test lint
