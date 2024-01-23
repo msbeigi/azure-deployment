@@ -14,15 +14,12 @@ def call_fastapi_app(city):
         print("Response text:", response.text)
 
 
-
 if __name__ == "__main__":
-    # if len(sys.argv) != 2:
-    #     print("Usage: python call_sample_appService.py <city>")
-    #     sys.exit(1)
-
+    if len(sys.argv) != 2:
+        print("Usage: python call_sample_appService.py <city>")
+        sys.exit(1)
 
     print("Started..")
     city_arg = sys.argv[1]
-    print('Calling endpoint location city \nArg is:', city_arg)
+    print("Calling endpoint location city \nArg is:", city_arg)
     call_fastapi_app(city_arg)
-
